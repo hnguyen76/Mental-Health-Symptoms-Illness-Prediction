@@ -1,7 +1,8 @@
 # Mental Health Symptoms & Illness Prediction Dashboard
-https://mental-health-symptoms-illness-prediction-4jlrlpbcidymn9rplt3c.streamlit.app/
 
 Created by Hieu Nguyen
+
+[Open Live Streamlit Dashboard](https://mental-health-symptoms-illness-prediction-4jlrlpbcidymn9rplt3c.streamlit.app/)
 
 This repository contains a professional Streamlit dashboard for exploring a mental-health symptom dataset with 8,304 records, 22 condition labels, and 185 binary symptom features.
 
