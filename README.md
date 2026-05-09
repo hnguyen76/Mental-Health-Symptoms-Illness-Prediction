@@ -12,6 +12,7 @@ The dashboard is built as a recruiter-ready analytics portfolio project. It focu
 - Condition profile deep dives with distinctive symptoms and co-occurrence heatmaps
 - Symptom explorer for condition association and related symptom lift
 - Prediction sandbox that ranks condition profiles from selected symptoms
+- Standalone `clean_up.py` script for repeatable dataset cleanup and quality reporting
 - Data quality page covering missing values, duplicates, balance, and schema readiness
 - Clear responsible-use note: this is an analytics demo, not a clinical diagnosis tool
 
@@ -27,10 +28,32 @@ The dashboard is built as a recruiter-ready analytics portfolio project. It focu
 
 ```text
 .
-├── app.py
-├── illness_dataset.csv
-├── requirements.txt
-└── README.md
++-- app.py
++-- clean_up.py
++-- illness_dataset.csv
++-- requirements.txt
++-- .streamlit/
+|   +-- config.toml
++-- README.md
+```
+
+## Data Cleanup
+
+Run the cleanup script to normalize column names, coerce symptom features to binary values, add an active symptom count, and export a lightweight quality report.
+
+```bash
+python clean_up.py
+```
+
+Generated files:
+
+- `data/processed/illness_dataset_clean.csv`
+- `data/processed/data_quality_report.csv`
+
+Optional duplicate removal:
+
+```bash
+python clean_up.py --drop-duplicates
 ```
 
 ## Run Locally
@@ -39,7 +62,7 @@ The dashboard is built as a recruiter-ready analytics portfolio project. It focu
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run app.py --server.port 8502
 ```
 
 Then open the local Streamlit URL shown in the terminal.

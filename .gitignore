@@ -6,6 +6,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .streamlit/secrets.toml
+data/processed/
 *.log
 .DS_Store
 Thumbs.db
